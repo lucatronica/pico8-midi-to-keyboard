@@ -1,4 +1,5 @@
-# pico8-midi-to-keyboard
-A program which converts MIDI inputs to keyboard inputs, allow MIDI devices to be used with PICO-8.
+# PICO-8 MIDI to Keyboard
 
-Windows only at the moment. OSX planned.
+A program which converts MIDI inputs to keyboard inputs, allowing MIDI devices to be used with PICO-8.
+
+[Download from the releases tab](https://github.com/lucatronica/pico8-midi-to-keyboard/releases/latest).
