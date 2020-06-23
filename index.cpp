@@ -21,8 +21,27 @@ void pressKey(char key) {
 	SendInput(1, &input, sizeof(INPUT));
 }
 
+#elif defined(__APPLE__)
+
+#include <ApplicationServices/ApplicationServices.h>
+
+void pressKey(char key) {
+	CGEventRef eventDown = CGEventCreateKeyboardEvent(NULL, 8, true);
+	CGEventRef eventUp = CGEventCreateKeyboardEvent(NULL, 8, false);
+	
+	if (eventDown != NULL && eventUp != NULL) {
+		UniChar s[] = {key};
+		CGEventKeyboardSetUnicodeString(eventDown, 1, s);
+		CGEventKeyboardSetUnicodeString(eventUp, 1, s);
+		CGEventPost(kCGSessionEventTap, eventDown);
+		CGEventPost(kCGSessionEventTap, eventUp);
+	}
+
+	CFRelease(eventDown);
+	CFRelease(eventUp);
+}
+
 // TODO linux
-// TODO osx
 
 #endif
 
@@ -49,6 +68,7 @@ void initMidiTable() {
 
 void exitWithMessage(std::string message, int code) {
 	std::cout << message << std::endl;
+	std::cout << "Press enter to close." << std::endl;
 	std::cin.get();
 	exit(code);
 }

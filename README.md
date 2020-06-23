@@ -24,3 +24,13 @@ for i=96,125 do
   key_to_midi[chr(i)]=32+(i-96)
 end
 ```
+
+# Building
+
+### Windows
+
+Open the `midi-to-keyboard` project in Visual Studio and build.
+
+### Mac
+
+Run `./build-osx.sh`.
