@@ -25,7 +25,7 @@ for i=96,125 do
 end
 ```
 
-# Building
+## Building
 
 ### Windows
 
