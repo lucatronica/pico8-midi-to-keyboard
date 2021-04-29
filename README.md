@@ -4,6 +4,24 @@ A program which converts MIDI inputs to keyboard inputs, allowing MIDI devices t
 
 [Download from the releases tab](https://github.com/lucatronica/pico8-midi-to-keyboard/releases/latest).
 
+## Running
+
+On Windows, run:
+
+```
+.\midi-to-keyboard-windows.exe
+```
+
+#### Specifying which MIDI controller to use
+
+To specify which MIDI controller to use, figure out its name and then enter its as the first argument.
+
+Partial matches also work. The search is case sensitive. For example, if your controller is called "microKey-25", you can use it with the command:
+
+```
+.\midi-to-keyboard-windows.exe microKEY
+```
+
 ## MIDI to key conversion
 
 The following mapping is used:
